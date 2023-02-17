@@ -21,7 +21,7 @@ const module = defineNuxtModule({
     }).then((r) => {
       console.log(r);
     });
-    logger.success("Session setup complete");
+    logger.success("@bitinflow/ui module loaded");
   }
 });
 

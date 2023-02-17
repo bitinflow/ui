@@ -7,7 +7,11 @@ declare namespace _default {
         link: string;
     };
     namespace computed {
-        const thirdLevelLinks: () => never[];
+        const thirdLevelLinks: () => {
+            name: string;
+            icon: string;
+            to: string;
+        }[];
     }
     namespace methods {
         function onChange(event: any): void;

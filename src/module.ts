@@ -4,8 +4,7 @@ import {
   createResolver,
   useLogger,
   addImportsDir,
-  addComponent,
-  resolveFiles, addComponentsDir
+  addComponentsDir
 } from '@nuxt/kit'
 
 // Module options TypeScript inteface definition
@@ -38,6 +37,6 @@ export default defineNuxtModule<ModuleOptions>({
       console.log(r)
     });
 
-    logger.success('Session setup complete')
+    logger.success('@bitinflow/ui module loaded')
   }
 })

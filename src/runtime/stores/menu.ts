@@ -1,13 +1,14 @@
 import {defineStore} from 'pinia';
+import {ThirdLevelLink} from "../../types";
 
 export const useMenuStore = defineStore('menu', {
     state: () => {
         return {
-            thirdLevelLinks: []
+            thirdLevelLinks: [] as Array<ThirdLevelLink>
         }
     },
     actions: {
-        updateThirdLevelLinks(links) {
+        updateThirdLevelLinks(links: Array<ThirdLevelLink>) {
             this.thirdLevelLinks = links;
         },
     },
