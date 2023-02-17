@@ -81,6 +81,8 @@
 </template>
 
 <script>
+import {useMenu} from "../src/runtime/composables";
+
 export default {
   setup() {
     useMenu({

@@ -44,7 +44,7 @@
 
 <script>
 import {mapState} from "pinia";
-import {useMenuStore} from "../stores/menu.js";
+import {useMenuStore} from "../stores/menu";
 import BitinflowButton from "./BitinflowButton.vue";
 
 export default {
