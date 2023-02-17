@@ -46,7 +46,7 @@ npm install --save-dev @bitinflow/ui
 export default defineNuxtConfig({
   modules: [
     '@bitinflow/ui',
-    '@'
+    '@pinia/nuxt',
   ]
 })
 ```
