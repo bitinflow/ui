@@ -11,27 +11,29 @@
     <nav class="bg-white dark:bg-base-700 py-4">
       <div class="container mx-auto px-4 lg:px-16">
         <div class="hidden xl:block space-x-4">
-          <bitinflow-button
+          <bitinflow-button-link
             v-for="item in thirdLevelLinks"
             :key="item.name"
+            :to="resolve(item.to)"
           >
             <i
               :class="['far', item.icon]"
               class="icon"
-            /> {{ link.name }}
-          </bitinflow-button>
+            /> {{ item.name }}
+          </bitinflow-button-link>
         </div>
 
         <div class="flex flex-col xl:hidden">
           <select
             v-model="link"
-            class="bg-white"
+            class="bg-white dark:bg-base-700 outline-none"
             @change="onChange"
           >
             <option
               v-for="item in thirdLevelLinks"
               :key="item.name"
-              :value="item.to"
+              :value="resolve(item.to)"
+              :selected="link === item.to"
             >
               {{ item.name }}
             </option>
@@ -45,23 +47,27 @@
 <script>
 import {mapState} from "pinia";
 import {useMenuStore} from "../stores/menu";
-import BitinflowButton from "./BitinflowButton.vue";
+import BitinflowButtonLink from "./BitinflowButtonLink.vue";
 
 export default {
   name: "BitinflowThirdLevelMenu",
-  components: {BitinflowButton},
+  components: {BitinflowButtonLink},
   data() {
     return {
-      link: ''
+      link: this.$route.path
     }
   },
   computed: {
-    ...mapState(useMenuStore, ['thirdLevelLinks'])
+    ...mapState(useMenuStore, ['thirdLevelLinks', 'thirdLevelProps'])
   },
   methods: {
     onChange(event) {
       this.link = event.target.value
       this.$router.push(event.target.value)
+    },
+    resolve(to) {
+      // replace all :params with the actual values
+      return to.replace(/:([^/]+)/g, (_, param) => this.thirdLevelProps[param])
     }
   }
 }

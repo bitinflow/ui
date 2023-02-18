@@ -6,4 +6,7 @@ export const useMenu = (options: MenuOptions) => {
     if (options.thirdLevelLinks) {
         menu.updateThirdLevelLinks(options.thirdLevelLinks)
     }
+    if (options.thirdLevelProps) {
+        menu.updateThirdLevelProps(options.thirdLevelProps)
+    }
 }

@@ -10,7 +10,7 @@
     <header class="bg-white relative shadow sm:hidden z-10">
       <div class="container flex justify-between items-center py-4">
         <img
-          src="/img/icon-light.svg"
+          src="https://cdn.bitinflow.com/ui/images/brand/icon.svg"
           class="h-4"
           alt="bitinflow"
         >
@@ -35,7 +35,7 @@
               class="h-8 w-8 rounded-full"
               alt="profile"
               src="/img/avatar.jpg"
-            />
+            >
           </nuxt-link>
 
           <button
@@ -72,7 +72,7 @@
         <div class="flex-none bg-primary-500 h-16 sm:h-20 py-3 sm:py-6 text-white flex flex-initial justify-center">
           <button @click="toggleDarkMode">
             <img
-              src="/img/icon-light.svg"
+              src="https://cdn.bitinflow.com/ui/images/brand/icon-light.svg"
               class="h-8 w-auto"
               alt="Logo"
             >
