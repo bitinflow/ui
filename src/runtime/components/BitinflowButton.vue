@@ -76,7 +76,7 @@ export default {
   @apply bg-primary-500 hover:bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-600 text-black dark:text-white;
 }
 .base-solid {
-  @apply hover:bg-zinc-100 dark:bg-base-700 dark:hover:bg-base-600 text-black dark:text-white;
+  @apply bg-white hover:bg-zinc-100 dark:bg-base-700 dark:hover:bg-base-600 text-black dark:text-white;
 }
 .danger-solid {
   @apply bg-rose-600 hover:bg-rose-400 dark:bg-rose-500 dark:hover:bg-rose-600 text-black dark:text-white;
