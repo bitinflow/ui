@@ -3,17 +3,24 @@
     <!-- Overlay -->
     <div
       ref="overlay"
-      class="sm:hidden hidden bg-gray-800 opacity-50 w-full min-h-screen absolute z-10"
+      class="sm:hidden hidden bg-base-800 opacity-50 w-full min-h-screen absolute z-10"
     />
 
     <!-- Header -->
-    <header class="bg-white relative shadow sm:hidden z-10">
-      <div class="container flex justify-between items-center py-4">
-        <img
-          src="https://cdn.bitinflow.com/ui/images/brand/icon.svg"
-          class="h-4"
-          alt="bitinflow"
-        >
+    <header class="bg-white text-black shadow dark:bg-base-800 dark:text-white relative shadow sm:hidden z-10">
+      <div class="container flex justify-between items-center p-4">
+        <button @click="toggleDarkMode">
+          <img
+            src="https://cdn.bitinflow.com/ui/images/brand/icon-light.svg"
+            class="h-4 hidden dark:block"
+            alt="bitinflow"
+          >
+          <img
+            src="https://cdn.bitinflow.com/ui/images/brand/icon.svg"
+            class="h-4 block dark:hidden"
+            alt="bitinflow"
+          >
+        </button>
 
         <div class="flex items-center space-x-4">
           <nuxt-link
@@ -31,11 +38,12 @@
             class="inline-block flex"
             to="/"
           >
-            <img
-              class="h-8 w-8 rounded-full"
-              alt="profile"
-              src="/img/avatar.jpg"
-            >
+            <Avatar
+              :size="32"
+              variant="beam"
+              name="John Doe"
+              :colors="colors"
+            />
           </nuxt-link>
 
           <button
@@ -101,10 +109,17 @@
 </template>
 
 <script>
+import Avatar from "vue-boring-avatars";
+
 export default {
   name: "BitinflowFirstLevelMenu",
+  components: {
+    Avatar
+  },
   data() {
     return {
+      colors: ["#59FFE8", "#00BFA5", "#00F2D1", "#26FFE1", "#8CFFEF"],
+      //colors: ["#A6FFF3", "#00352E", "#00BFA5", "#59FFE8", "#A6FFF3"],
       primaryMenu: [
         {name: 'Home', icon: 'fal fa-home', to: '/', exact: true},
         {name: 'Buckets', icon: 'fal fa-bucket', to: '/buckets', exact: false},
