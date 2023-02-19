@@ -12,9 +12,9 @@
 
         <template v-if="loading">
           <div
-            class="bg-zinc-100 dark:bg-base-600 rounded-lg px-4 py-2" \
             v-for="i in 3"
             :key="i"
+            class="bg-zinc-100 dark:bg-base-600 rounded-lg px-4 py-2"
           >
             &nbsp;
           </div>
