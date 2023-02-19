@@ -73,19 +73,19 @@ export default {
   @apply text-6xl;
 }
 .primary-solid {
-  @apply bg-primary-500 hover:bg-primary-400 dark:bg-primary-700 dark:hover:bg-primary-600 text-black dark:text-white;
+  @apply bg-primary-500 hover:bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-600 text-black dark:text-white;
 }
 .base-solid {
   @apply hover:bg-zinc-100 dark:bg-base-700 dark:hover:bg-base-600 text-black dark:text-white;
 }
 .danger-solid {
-  @apply bg-rose-600 hover:bg-rose-400 dark:bg-rose-700 dark:hover:bg-rose-600 text-black dark:text-white;
+  @apply bg-rose-600 hover:bg-rose-400 dark:bg-rose-500 dark:hover:bg-rose-600 text-black dark:text-white;
 }
 .primary-outline {
   @apply border-primary-500 hover:bg-primary-500 dark:hover:bg-primary-600 dark:border-primary-700 dark:hover:border-primary-600 text-black dark:text-white;
 }
 .base-outline {
-  @apply border-zinc-100 hover:bg-zinc-100 dark:hover:bg-base-600 dark:border-base-500 dark:hover:border-base-600 text-black dark:text-white;
+  @apply border-zinc-200 hover:bg-zinc-200 dark:hover:bg-base-700 dark:border-base-500 dark:hover:border-base-500 text-black dark:text-white;
 }
 .danger-outline {
   @apply border-rose-500 hover:bg-rose-500 dark:hover:bg-rose-600 dark:border-rose-700 dark:hover:border-rose-600 text-black dark:text-white;
