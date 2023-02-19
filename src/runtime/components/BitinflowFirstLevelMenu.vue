@@ -9,15 +9,15 @@
     <!-- Header -->
     <header class="bg-white text-black shadow dark:bg-base-800 dark:text-white relative shadow sm:hidden z-10">
       <div class="container flex justify-between items-center p-4">
-        <button @click="toggleDarkMode">
+        <button @click="toggleDarkMode" ref="button">
           <img
             src="https://cdn.bitinflow.com/ui/images/brand/icon-light.svg"
-            class="h-4 hidden dark:block"
+            class="h-8 hidden dark:block"
             alt="bitinflow"
           >
           <img
             src="https://cdn.bitinflow.com/ui/images/brand/icon.svg"
-            class="h-4 block dark:hidden"
+            class="h-8 block dark:hidden"
             alt="bitinflow"
           >
         </button>
@@ -118,6 +118,7 @@ export default {
   },
   data() {
     return {
+      count: 0,
       colors: ["#59FFE8", "#00BFA5", "#00F2D1", "#26FFE1", "#8CFFEF"],
       //colors: ["#A6FFF3", "#00352E", "#00BFA5", "#59FFE8", "#A6FFF3"],
       primaryMenu: [
@@ -142,6 +143,20 @@ export default {
       this.$refs.sidebar.classList.add('-translate-x-full');
     },
     toggleDarkMode() {
+      this.count++;
+      if (this.count % 4 === 0) {
+        console.log('rotate');
+        this.$refs.button.classList.add('rotate-360');
+        this.$refs.button.classList.add('transition-transform');
+        this.$refs.button.classList.add('duration-500');
+
+        setTimeout(() => {
+          // remove all classes
+          this.$refs.button.classList.remove('rotate-360');
+          this.$refs.button.classList.remove('transition-transform');
+          this.$refs.button.classList.remove('duration-500');
+        }, 500);
+      }
       document.body.classList.toggle('dark')
     }
   },
@@ -155,5 +170,9 @@ export default {
 
 .nuxt-link-active:hover {
   background: #004F44;
+}
+
+.rotate-360 {
+  transform: rotate(360deg);
 }
 </style>

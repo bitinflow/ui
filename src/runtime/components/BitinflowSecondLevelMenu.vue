@@ -9,6 +9,16 @@
     <div class="flex flex-col gap-2 justify-between flex-1">
       <div class="flex flex-col gap-2">
         <slot />
+
+        <template v-if="loading">
+          <div
+            class="bg-zinc-100 dark:bg-base-600 rounded-lg px-4 py-2" \
+            v-for="i in 3"
+            :key="i"
+          >
+            &nbsp;
+          </div>
+        </template>
       </div>
       <div v-if="hasCreateListener">
         <bitinflow-second-level-button
@@ -37,6 +47,10 @@ export default {
       default: [
         {name: 'Test', href: 'Test'}
       ]
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
   },
 
