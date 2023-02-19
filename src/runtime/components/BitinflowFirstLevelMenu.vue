@@ -9,7 +9,10 @@
     <!-- Header -->
     <header class="bg-white text-black shadow dark:bg-base-800 dark:text-white relative shadow sm:hidden z-10">
       <div class="container flex justify-between items-center p-4">
-        <button @click="toggleDarkMode" ref="button">
+        <button
+          class="bitinflow-logo"
+          @click="toggleDarkMode"
+        >
           <img
             src="https://cdn.bitinflow.com/ui/images/brand/icon-light.svg"
             class="h-8 hidden dark:block"
@@ -78,7 +81,10 @@
       >
         <!-- logo -->
         <div class="flex-none bg-primary-500 h-16 sm:h-20 py-3 sm:py-6 text-white flex flex-initial justify-center">
-          <button @click="toggleDarkMode">
+          <button
+            class="bitinflow-logo"
+            @click="toggleDarkMode"
+          >
             <img
               src="https://cdn.bitinflow.com/ui/images/brand/icon-light.svg"
               class="h-8 w-auto"
@@ -146,16 +152,19 @@ export default {
       this.count++;
       if (this.count % 4 === 0) {
         console.log('rotate');
-        this.$refs.button.classList.add('rotate-360');
-        this.$refs.button.classList.add('transition-transform');
-        this.$refs.button.classList.add('duration-500');
+        const buttons = document.querySelectorAll('.bitinflow-logo');
+        buttons.forEach((button) => {
+          button.classList.add('rotate-360');
+          button.classList.add('transition-transform');
+          button.classList.add('duration-500');
 
-        setTimeout(() => {
-          // remove all classes
-          this.$refs.button.classList.remove('rotate-360');
-          this.$refs.button.classList.remove('transition-transform');
-          this.$refs.button.classList.remove('duration-500');
-        }, 500);
+          setTimeout(() => {
+            // remove all classes
+            button.classList.remove('rotate-360');
+            button.classList.remove('transition-transform');
+            button.classList.remove('duration-500');
+          }, 500);
+        });
       }
       document.body.classList.toggle('dark')
     }
