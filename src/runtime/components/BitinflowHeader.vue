@@ -1,6 +1,12 @@
 <template>
   <div class="flex justify-between items-center">
-    <slot />
+    <div class="text-2xl dark:text-white">
+      <slot />
+    </div>
+
+    <div>
+      <slot name="actions" />
+    </div>
   </div>
 </template>
 
