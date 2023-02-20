@@ -5,6 +5,7 @@
     </div>
     <input
       class="block w-full text-black dark:text-white border-2 border-zinc-200 dark:border-base-500 dark:border-base-500 focus:outline-none dark:bg-base-700 dark:text-white rounded-lg px-4 py-2"
+      :class="calculatedClass"
       :type="type"
       :value="modelValue"
       :placeholder="placeholder"
@@ -33,10 +34,23 @@ export default {
     type: {
       type: String,
       default: 'text'
+    },
+    size: {
+      type: String,
+      default: 'normal'
     }
   },
 
   emits: ['update:modelValue'],
+
+  computed: {
+    calculatedClass() {
+      if (this.size !== 'normal') {
+        return `text-${this.size}`;
+      }
+      return '';
+    }
+  },
 
   methods: {
     change(e) {
