@@ -126,6 +126,10 @@ export default {
   @apply border-zinc-200 hover:bg-zinc-200 dark:hover:bg-base-700 dark:border-base-500 dark:hover:border-base-500 text-black dark:text-white;
 }
 
+.light-outline {
+  @apply border-zinc-100 hover:bg-zinc-200 hover:border-zinc-200 dark:hover:bg-base-600 dark:border-base-600 dark:hover:border-base-600 text-black dark:text-white;
+}
+
 .danger-outline {
   @apply border-rose-500 hover:bg-rose-500 dark:hover:bg-rose-500 dark:border-rose-500 dark:hover:border-rose-500 text-rose-500 hover:text-white;
 }
