@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/require-explicit-emits -->
 <template>
   <nav
-    class="w bg-white text-black shadow dark:bg-base-700 dark:text-white dark:border-base-900 dark:border-l flex flex-col overflow-y-auto h-screen absolute sm:relative transform -translate-x-full sm:translate-x-0 pt-10 pb-4 px-4 space-y-2"
+    class="w-64 bg-white text-black shadow dark:bg-base-700 dark:text-white dark:border-base-900 dark:border-l flex flex-col overflow-y-auto h-screen absolute sm:relative transform -translate-x-full sm:translate-x-0 pt-10 pb-4 px-4 space-y-2"
   >
     <span class="font-semibold px-4">
       <slot name="title" />
