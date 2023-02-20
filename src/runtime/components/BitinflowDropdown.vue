@@ -28,22 +28,28 @@ export default {
   data() {
     return {
       open: false,
-      close: () => {
+      closeListener: () => {
         // is clicked outside the dropdown
         if (!this.$el.contains(event.target)) {
-          this.open = false;
+          this.close()
         }
       }
     }
   },
 
   mounted() {
-    document.addEventListener('click', this.close);
+    document.addEventListener('click', this.closeListener);
   },
 
   beforeUnmount() {
-    document.removeEventListener('click', this.close);
+    document.removeEventListener('click', this.closeListener);
   },
+
+  methods: {
+    close() {
+      this.open = false
+    }
+  }
 }
 </script>
 

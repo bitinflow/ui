@@ -27,7 +27,7 @@
           </div>
           <div class="w-20 h-18 flex justify-center items-center">
             <div class="w-1/2 h-11">
-              <bitinflow-dropdown>
+              <bitinflow-dropdown ref="dropdown">
                 <template #menu>
                   <template
                     v-for="option in options"
@@ -35,7 +35,7 @@
                   >
                     <bitinflow-dropdown-item
                       :destructive="option.destructive"
-                      @click="option.action([item])"
+                      @click="optionClick(option)"
                     >
                       <i :class="['fal mr-2', option.icon ? option.icon : 'fa-play']"/>
                       {{ option.label }}
@@ -87,6 +87,10 @@ export default {
     },
     click() {
       this.$emit('click');
+    },
+    optionClick(option) {
+      this.$refs.dropdown.close();
+      option.action([this.item])
     }
   }
 }
