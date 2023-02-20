@@ -37,11 +37,11 @@ export default {
     computedClass: function () {
       return `button-text-${this.size} ${this.color}-${this.variant}`
     },
+  },
 
-    methods: {
-      click() {
-        this.$emit('click');
-      }
+  methods: {
+    click() {
+      this.$emit('click');
     }
   }
 }
@@ -73,21 +73,27 @@ export default {
   @apply text-6xl;
 }
 .primary-solid {
-  @apply bg-primary-500 hover:bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-600 text-black dark:text-white;
+  @apply bg-primary-600 hover:bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-400 text-black dark:text-white;
 }
 .base-solid {
   @apply bg-white hover:bg-zinc-100 dark:bg-base-700 dark:hover:bg-base-600 text-black dark:text-white;
 }
 .danger-solid {
-  @apply bg-rose-600 hover:bg-rose-400 dark:bg-rose-500 dark:hover:bg-rose-600 text-black dark:text-white;
+  @apply bg-rose-600 hover:bg-rose-400 dark:bg-rose-500 dark:hover:bg-rose-400 text-black dark:text-white;
+}
+.warning-solid {
+  @apply bg-amber-600 hover:bg-amber-400 dark:bg-amber-500 dark:hover:bg-amber-400 text-black dark:text-white;
 }
 .primary-outline {
-  @apply border-primary-500 hover:bg-primary-500 dark:hover:bg-primary-600 dark:border-primary-700 dark:hover:border-primary-600 text-black dark:text-white;
+  @apply border-primary-500 hover:bg-primary-500 dark:hover:bg-primary-500 dark:border-primary-500 dark:hover:border-primary-500 text-primary-500 hover:text-white;
+}
+.warning-outline {
+  @apply border-amber-500 hover:bg-amber-500 dark:hover:bg-amber-500 dark:border-amber-500 dark:hover:border-amber-500 text-amber-500 hover:text-white;
 }
 .base-outline {
   @apply border-zinc-200 hover:bg-zinc-200 dark:hover:bg-base-700 dark:border-base-500 dark:hover:border-base-500 text-black dark:text-white;
 }
 .danger-outline {
-  @apply border-rose-500 hover:bg-rose-500 dark:hover:bg-rose-600 dark:border-rose-700 dark:hover:border-rose-600 text-black dark:text-white;
+  @apply border-rose-500 hover:bg-rose-500 dark:hover:bg-rose-500 dark:border-rose-500 dark:hover:border-rose-500 text-rose-500 hover:text-white;
 }
 </style>
