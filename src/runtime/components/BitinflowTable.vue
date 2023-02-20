@@ -103,7 +103,7 @@
               <bitinflow-table-floating-action
                 :icon="option.icon"
                 :destructive="option.destructive"
-                @click="option.action(selectedItems)"
+                @click="clickOption(option)"
               >
                 {{ option.label }}
               </bitinflow-table-floating-action>
@@ -189,6 +189,10 @@ export default {
     },
     click(item) {
       this.$emit('click', item);
+    },
+    clickOption(option) {
+      option.action(this.selectedItems)
+      this.selectAll(false)
     }
   }
 }
