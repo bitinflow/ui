@@ -1,7 +1,7 @@
 <!-- eslint-disable vue/require-explicit-emits -->
 <template>
   <nav
-    class="w-64 bg-white text-black shadow dark:bg-base-700 dark:text-white dark:border-base-900 dark:border-l flex flex-col overflow-y-auto h-screen absolute sm:relative transform -translate-x-full sm:translate-x-0 pt-10 pb-4 px-4 space-y-2"
+    class="w bg-white text-black shadow dark:bg-base-700 dark:text-white dark:border-base-900 dark:border-l flex flex-col overflow-y-auto h-screen absolute sm:relative transform -translate-x-full sm:translate-x-0 pt-10 pb-4 px-4 space-y-2"
   >
     <span class="font-semibold px-4">
       <slot name="title" />
@@ -14,11 +14,23 @@
           <div
             v-for="i in 3"
             :key="i"
-            class="bg-zinc-100 dark:bg-base-600 rounded-lg px-4 py-2"
-          >
-            &nbsp;
-          </div>
+            class="bg-zinc-100 dark:bg-base-600 rounded-lg px-4 py-2 h-10 animate-pulse"
+          />
         </template>
+        <div v-else-if="empty" class="bg-zinc-100 dark:bg-base-600 rounded-lg px-4 py-16 text-xl opacity-50 text-center">
+          <i class="fas fa-ghost mr-2 text-5xl opacity-70" />
+          <div>
+            No resources found
+          </div>
+          <div class="text-xs mt-2 opacity-70">
+            <template v-if="hasCreateListener">
+              Click on the <span class="font-bold"><i class="far fa-plus" /> Create Resource</span> button below to create your first resource.
+            </template>
+            <template v-else>
+              You don't have any resources yet.
+            </template>
+          </div>
+        </div>
       </div>
       <div v-if="hasCreateListener">
         <bitinflow-second-level-button
@@ -49,6 +61,10 @@ export default {
       ]
     },
     loading: {
+      type: Boolean,
+      default: false
+    },
+    empty: {
       type: Boolean,
       default: false
     }

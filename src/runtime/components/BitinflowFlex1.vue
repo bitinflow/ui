@@ -1,12 +1,12 @@
 <template>
-  <div class="flex-auto">
+  <div class="flex-1">
     <slot />
   </div>
 </template>
 
 <script>
 export default {
-  name: "BitinflowFlexAuto"
+  name: "BitinflowFlex1"
 }
 </script>
 

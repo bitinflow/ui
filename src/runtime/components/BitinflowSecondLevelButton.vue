@@ -1,9 +1,9 @@
 <template>
   <bitinflow-button
     class="flex items-center gap-2 w-full"
+    icon="fa-plus"
     @click="$emit('click')"
   >
-    <i :class="['fal', icon]" />
     <slot />
   </bitinflow-button>
 </template>

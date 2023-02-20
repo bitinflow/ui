@@ -96,19 +96,19 @@
         <div class="flex-auto flex flex-col overflow-y-auto py-6 space-y-6">
           <!-- nav -->
           <nav class="primary flex flex-grow flex-col space-y-4 px-6">
-            <slot name="top" />
+            <slot name="top"/>
           </nav>
 
           <nav class="flex flex-initial flex-col space-y-4 px-6">
-            <slot name="bottom" />
+            <slot name="bottom"/>
           </nav>
         </div>
-        <div class="flex-none" />
+        <div class="flex-none"/>
       </nav>
 
       <!-- Content -->
       <main class="flex flex-1">
-        <slot />
+        <slot/>
       </main>
     </div>
   </div>
@@ -139,6 +139,12 @@ export default {
       ],
     };
   },
+  mounted() {
+    // restore dark mode from local storage
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark');
+    }
+  },
   methods: {
     toggleMenu() {
       this.$refs.overlay.classList.toggle('hidden');
@@ -166,7 +172,8 @@ export default {
           }, 500);
         });
       }
-      document.body.classList.toggle('dark')
+      const result = document.body.classList.toggle('dark')
+      localStorage.setItem('darkMode', result ? 'true' : 'false');
     }
   },
 };
