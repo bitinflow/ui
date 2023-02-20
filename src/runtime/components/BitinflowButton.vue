@@ -95,19 +95,23 @@ export default {
 }
 
 .primary-solid {
-  @apply bg-primary-600 hover:bg-primary-400 dark:bg-primary-500 dark:hover:bg-primary-400 text-black dark:text-white;
+  @apply bg-primary-500 hover:bg-primary-600 dark:bg-primary-500 dark:hover:bg-primary-400 text-white;
 }
 
 .base-solid {
   @apply bg-white hover:bg-zinc-100 dark:bg-base-700 dark:hover:bg-base-600 text-black dark:text-white;
 }
 
+.light-solid {
+  @apply bg-zinc-100 hover:bg-zinc-200 dark:bg-base-600 dark:hover:bg-base-500 text-black dark:text-white;
+}
+
 .danger-solid {
-  @apply bg-rose-600 hover:bg-rose-400 dark:bg-rose-500 dark:hover:bg-rose-400 text-black dark:text-white;
+  @apply bg-rose-500 hover:bg-rose-600 dark:bg-rose-500 dark:hover:bg-rose-400 text-white;
 }
 
 .warning-solid {
-  @apply bg-amber-600 hover:bg-amber-400 dark:bg-amber-500 dark:hover:bg-amber-400 text-black dark:text-white;
+  @apply bg-amber-500 hover:bg-amber-600 dark:bg-amber-500 dark:hover:bg-amber-400 text-white;
 }
 
 .primary-outline {
