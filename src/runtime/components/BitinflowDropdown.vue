@@ -3,7 +3,6 @@
     <div class="absolute">
       <bitinflow-button
         class="circle z-10 self-center"
-        color="light"
         variant="solid"
         icon="fa-ellipsis-vertical mr-[2px] ml-[2px]"
         @click="open = !open"
