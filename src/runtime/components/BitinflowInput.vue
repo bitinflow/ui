@@ -4,7 +4,7 @@
       {{ label }}
     </div>
     <input
-      class="block w-full text-black dark:text-white border-2 border-zinc-200 dark:border-base-500 dark:border-base-500 focus:outline-none dark:bg-base-700 dark:text-white rounded-lg px-4 py-2"
+      class="block w-full text-black dark:text-white border-2 border-zinc-200 dark:border-base-600 focus:outline-none dark:bg-base-700 dark:text-white rounded-lg px-4 py-2"
       :class="calculatedClass"
       :type="type"
       :value="modelValue"

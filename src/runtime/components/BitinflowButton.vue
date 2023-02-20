@@ -119,11 +119,11 @@ export default {
   @apply bg-white hover:bg-zinc-100 dark:bg-base-700 dark:hover:bg-base-600 text-black dark:text-white;
 }
 .base-outline {
-  @apply border-zinc-200 hover:bg-zinc-200 dark:hover:bg-base-700 dark:border-base-500 dark:hover:border-base-500 text-black dark:text-white;
+  @apply border-zinc-100 hover:bg-zinc-100 dark:hover:bg-base-700 dark:border-base-600 dark:hover:border-base-600 text-black dark:text-white;
 }
 
 .light-solid {
-  @apply bg-zinc-200 hover:bg-zinc-300 dark:bg-base-500 dark:hover:bg-base-400 text-black dark:text-white;
+  @apply bg-zinc-200 hover:bg-zinc-300 dark:bg-base-600 dark:hover:bg-base-500 text-black dark:text-white;
 }
 .light-outline {
   @apply border-zinc-200 hover:bg-zinc-200 hover:border-zinc-200 dark:hover:bg-base-500 dark:border-base-500 dark:hover:border-base-500 text-black dark:text-white;
