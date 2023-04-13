@@ -22,12 +22,19 @@ export default {
     href: {
       type: String,
       default: '/'
+    },
+    exact: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
     calculateClasses: function () {
       return {
-        'router-link-active': document.location.href.includes(this.href) && this.href !== '/',
+        'router-link-active':
+          this.exact
+          ? document.location.href === this.href
+          : document.location.href.includes(this.href) && this.href !== '/',
       }
     }
   }
