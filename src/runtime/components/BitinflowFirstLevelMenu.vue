@@ -122,6 +122,12 @@ export default {
   components: {
     Avatar
   },
+  props: {
+    darkMode: {
+      type: Boolean,
+      default: false
+    }
+  },
   data() {
     return {
       count: 0,
@@ -155,6 +161,7 @@ export default {
       this.$refs.sidebar.classList.add('-translate-x-full');
     },
     toggleDarkMode() {
+      if (!this.darkMode) return;
       this.count++;
       if (this.count % 4 === 0) {
         console.log('rotate');
